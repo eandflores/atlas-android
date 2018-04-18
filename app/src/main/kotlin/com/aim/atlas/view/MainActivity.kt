@@ -1,9 +1,11 @@
-package com.aim.atlas
+package com.aim.atlas.view
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.arch.lifecycle.ViewModelProviders
-
+import android.content.Intent
+import com.aim.atlas.R
+import com.aim.atlas.viewModel.MainViewModel
 
 
 class MainActivity : AppCompatActivity() {
@@ -15,5 +17,13 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         viewModel = ViewModelProviders.of(this).get(MainViewModel::class.java)
         viewModel?.init()
+
+        goToLoginActivity()
+    }
+
+    fun goToLoginActivity() {
+        var intent = Intent(this, LoginActivity::class.java)
+        startActivity(intent)
+        finish()
     }
 }
