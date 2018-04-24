@@ -1,11 +1,11 @@
-package com.aim.atlas.view
+package com.aim.atlas.ui.main
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.arch.lifecycle.ViewModelProviders
 import android.content.Intent
 import com.aim.atlas.R
-import com.aim.atlas.viewModel.MainViewModel
+import com.aim.atlas.ui.login.LoginActivity
 
 
 class MainActivity : AppCompatActivity() {
@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun goToLoginActivity() {
-        var intent = Intent(this, LoginActivity::class.java)
+        val intent = Intent(this, LoginActivity::class.java)
         startActivity(intent)
         finish()
     }

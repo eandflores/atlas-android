@@ -1,4 +1,4 @@
-package com.aim.atlas.viewModel
+package com.aim.atlas.ui.main
 
 import android.arch.lifecycle.ViewModel
 import android.content.Context

@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Atlas</string>
+
+    <!-- Login -->
+    <string name="login_button">Login</string>
+    <string name="login_email">Dirección Email</string>
+    <string name="login_password">Contraseña</string>
+    <string name="login_header">Bienvenido a AIM Manager</string>
+    <string name="login_forgot_password">Olvidó su contraseña?</string>
+
+</resources>
