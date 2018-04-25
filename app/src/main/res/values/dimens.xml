@@ -14,4 +14,14 @@
     <dimen name="login_button_margin">32dp</dimen>
     <dimen name="login_header_margin">40dp</dimen>
     <dimen name="login_image_margin">16dp</dimen>
+
+    <!-- Blocked Account -->
+    <dimen name="blocked_account_button_margin">24dp</dimen>
+    <dimen name="blocked_account_body_margin">8dp</dimen>
+    <dimen name="blocked_account_image_margin">16dp</dimen>
+    <dimen name="blocked_account_change_account_margin">16dp</dimen>
+
+    <!-- Blocked Account -->
+    <dimen name="forgotten_password_button_margin">24dp</dimen>
+
 </resources>

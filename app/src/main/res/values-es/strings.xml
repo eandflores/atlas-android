@@ -6,6 +6,19 @@
     <string name="login_email">Dirección Email</string>
     <string name="login_password">Contraseña</string>
     <string name="login_header">Bienvenido a AIM Manager</string>
+    <string name="login_header_expired_session">Hola %1$s, Bienvenido nuevamente!</string>
+    <string name="login_change_user">Eres otro usuario?</string>
     <string name="login_forgot_password">Olvidó su contraseña?</string>
 
+    <!-- Blocked Account -->
+    <string name="blocked_account_button">Ir al login</string>
+    <string name="blocked_account_header">Esta cuenta ha sido bloqueada!</string>
+    <string name="blocked_account_body">Por razones de seguridad esta cuenta ha sido bloqueda. Haz click en el botón “Desbloquear Cuenta” para reactivar tu cuenta. Este proceso podría tomar al menos 24 hrs antes de la reactivación.</string>
+    <string name="blocked_account_change_account_header">No eres %1$s?</string>
+    <string name="blocked_account_change_account">Desbloquear Cuenta</string>
+
+    <!-- Forgotten Password -->
+    <string name="forgotten_password_title">Olvidé mi contraseña</string>
+    <string name="forgotten_password_body"><![CDATA[<p>Te enviaremos un mensaje a <b><font color=%1$s>%2$s</font></b> en las siguientes 24 horas con una contraseña temporal. Tienes 24 horas después de recibir este mensaje para crear una contraseña definitiva antes que expire.</p>]]></string>
+    <string name="forgotten_password_button">Ir al login</string>
 </resources>
