@@ -54,7 +54,7 @@
                 android:layout_height="wrap_content"
                 android:inputType="textEmailAddress"
                 android:hint="@string/login_email"
-                android:textColor="@color/login_forgotten_password"/>
+                android:textColor="@color/login_edit_texts"/>
 
         </android.support.design.widget.TextInputLayout>
 
@@ -69,7 +69,7 @@
                 android:layout_height="wrap_content"
                 android:inputType="textPassword"
                 android:hint="@string/login_password"
-                android:textColor="@color/login_forgotten_password"/>
+                android:textColor="@color/login_edit_texts"/>
 
         </android.support.design.widget.TextInputLayout>
 
@@ -99,7 +99,8 @@
             android:layout_height="wrap_content"
             android:text="@string/login_forgot_password"
             android:gravity="center"
-            android:textColor="@color/login_forgotten_password"/>
+            android:textColor="@color/login_forgotten_password"
+            android:textStyle="bold"/>
 
     </LinearLayout>
 </android.support.design.widget.CoordinatorLayout>

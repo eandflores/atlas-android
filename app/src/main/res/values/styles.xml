@@ -3,8 +3,6 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="AppTheme.Base" />
 
-    <style name="AppThemeBlue" parent="AppTheme.Blue" />
-
     <style name="AppTheme.Base" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="colorPrimary">@color/color_primary</item>
         <item name="colorPrimaryDark">@color/color_primary_dark</item>
@@ -14,12 +12,6 @@
         <item name="windowActionBar">false</item>
     </style>
 
-    <style name="AppTheme.Blue" parent="Theme.AppCompat.Light.DarkActionBar">
-        <item name="colorPrimary">@color/color_primary_blue</item>
-        <item name="colorPrimaryDark">@color/color_primary_dark_blue</item>
-        <item name="colorAccent">@color/color_accent_blue</item>
-    </style>
-
     <style name="TextLabel" parent="TextAppearance.AppCompat">
         <!-- Label color in TRUE state and bar color FALSE and TRUE State -->
         <item name="android:textColorHint">@color/color_primary</item>
@@ -27,13 +19,10 @@
         <item name="colorControlActivated">@color/color_accent</item>
     </style>
 
-    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
-
-    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
-
-    <style name="toolbar_dark" parent="Widget.AppCompat.Toolbar">
-        <item name="theme">@style/ThemeOverlay.AppCompat.Dark</item>
-        <item name="popupTheme">@style/ThemeOverlay.AppCompat.Light</item>
+    <style name="toolbar_dark" parent="Theme.AppCompat">
+        <item name="android:textColorPrimary">@color/color_toolbar_text</item>
+        <item name="android:textColorSecondary">@color/color_toolbar_icons</item>
+        <item name="actionMenuTextColor">@color/color_toolbar_icons</item>
     </style>
 
 </resources>

@@ -8,6 +8,7 @@ import android.text.Html
 import com.aim.atlas.R
 import kotlinx.android.synthetic.main.activity_forgotten_password.textViewForgottenPassword
 import kotlinx.android.synthetic.main.activity_forgotten_password.buttonForgottenPassword
+import kotlinx.android.synthetic.main.activity_forgotten_password.toolbar
 
 class ForgottenPasswordActivity : AppCompatActivity() {
 
@@ -20,10 +21,8 @@ class ForgottenPasswordActivity : AppCompatActivity() {
     }
 
     private fun setView() {
-        /*setSupportActionBar(toolbar as Toolbar?)
-
-        if(supportActionBar != null)
-            supportActionBar?.setDisplayHomeAsUpEnabled(true);*/
+        setSupportActionBar(toolbar as Toolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         textViewForgottenPassword.text = Html.fromHtml(getString(
                 R.string.forgotten_password_body,
