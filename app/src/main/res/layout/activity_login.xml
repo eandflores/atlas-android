@@ -45,7 +45,7 @@
         <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/edittext_margin"
+            android:layout_marginBottom="@dimen/edit_text_margin"
             android:theme="@style/TextLabel">
 
             <EditText
@@ -94,7 +94,7 @@
         </LinearLayout>
 
         <TextView
-            android:id="@+id/textViewForgotPassword"
+            android:id="@+id/textViewForgottenPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/login_forgot_password"

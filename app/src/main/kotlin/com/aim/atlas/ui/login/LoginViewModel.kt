@@ -7,6 +7,7 @@ import com.aim.atlas.repository.UserRepository
 import com.aim.atlas.vo.Resource
 import javax.inject.Inject
 import android.arch.lifecycle.MutableLiveData
+import android.text.TextUtils
 import java.util.*
 
 
@@ -24,10 +25,26 @@ class LoginViewModel() : ViewModel() {
     }
 
     fun setLogin(login: String) {
-        if (Objects.equals(this.login.value, login)) {
+        if (Objects.equals(this.login.value, login))
             return
-        }
+
         this.login.value = login
+    }
+
+    fun emailValidation(email : String?) : Boolean {
+        if (TextUtils.isEmpty(email))
+            return false
+        else if (!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches())
+            return false
+
+        return true
+    }
+
+    fun passwordValidation(password : String?) : Boolean {
+        if (TextUtils.isEmpty(password))
+            return false
+
+        return true
     }
 
     fun getUser() : LiveData<Resource<User>>? {
@@ -35,9 +52,8 @@ class LoginViewModel() : ViewModel() {
     }
 
     fun retry() {
-        if (this.login.value != null) {
+        if (this.login.value != null)
             this.login.value = this.login.value
-        }
     }
 
 

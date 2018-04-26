@@ -31,6 +31,15 @@
             android:configChanges="orientation|keyboardHidden|navigation"
             android:windowSoftInputMode="stateAlwaysHidden|adjustPan" />
 
+        <activity
+            android:name=".ui.forgottenPassword.ForgottenPasswordActivity"
+            android:label="@string/forgotten_password_title"
+            android:parentActivityName=".ui.login.LoginActivity"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustPan"
+            android:theme="@style/AppThemeBlue"/>
+
     </application>
 
 </manifest>

@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Theme Gray -->
     <color name="color_primary">#6d6d72</color>
     <color name="color_primary_dark">#8a000000</color>
     <color name="color_accent">#234ab8</color>
+
+    <!-- Theme Blue -->
+    <color name="color_primary_blue">#2146ab</color>
+    <color name="color_primary_dark_blue">#0d2054</color>
+    <color name="color_accent_blue">#ffffff</color>
 
     <!-- Splash -->
     <color name="splash_background_init">#29efff</color>
@@ -10,18 +16,19 @@
 
     <!-- Login -->
     <color name="login_button_background">#0F75BC</color>
-    <color name="login_button_text">#FFFFFF</color>
+    <color name="login_button_text">#ffffff</color>
     <color name="login_header">#2962ff</color>
     <color name="login_forgotten_password">#2456e0</color>
 
     <!-- Blocked Account -->
     <color name="blocked_account_button_background">#0F75BC</color>
-    <color name="blocked_account_button_text">#FFFFFF</color>
+    <color name="blocked_account_button_text">#ffffff</color>
     <color name="blocked_account_header">#2962ff</color>
     <color name="blocked_account_change_account">#2456e0</color>
 
     <!-- Forgotten Password -->
     <color name="forgotten_password_button_background">#0F75BC</color>
-    <color name="forgotten_password_button_text">#FFFFFF</color>
+    <color name="forgotten_password_button_text">#ffffff</color>
+    <color name="forgotten_password_email">#2962ff</color>
 
 </resources>

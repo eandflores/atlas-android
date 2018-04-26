@@ -7,8 +7,9 @@
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="fab_elevation">6dp</dimen>
     <dimen name="card_elevation">4dp</dimen>
-    <dimen name="recyclerview_margin">8dp</dimen>
-    <dimen name="edittext_margin">8dp</dimen>
+    <dimen name="recycler_view_margin">8dp</dimen>
+    <dimen name="edit_text_margin">8dp</dimen>
+    <dimen name="toolbar_elevation">7dp</dimen>
 
     <!-- Login -->
     <dimen name="login_button_margin">32dp</dimen>
@@ -20,8 +21,5 @@
     <dimen name="blocked_account_body_margin">8dp</dimen>
     <dimen name="blocked_account_image_margin">16dp</dimen>
     <dimen name="blocked_account_change_account_margin">16dp</dimen>
-
-    <!-- Blocked Account -->
-    <dimen name="forgotten_password_button_margin">24dp</dimen>
 
 </resources>
