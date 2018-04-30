@@ -1,1 +1,3 @@
 include ':app'
+include ':atlas-core'
+project(":atlas-core").projectDir = new File("atlas-shared")

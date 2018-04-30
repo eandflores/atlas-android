@@ -6,5 +6,22 @@
     <string name="login_email">E-mail address</string>
     <string name="login_password">Password</string>
     <string name="login_header">Welcome to AIM Manager</string>
+    <string name="login_header_expired_session">Hi %1$s, Welcome back!</string>
+    <string name="login_change_user">Are you other user?</string>
     <string name="login_forgot_password">Forgot your password?</string>
+    <string name="login_email_validation">You should enter a valid E-mail</string>
+
+    <!-- Blocked Account -->
+    <string name="blocked_account_title">Blocked Account</string>
+    <string name="blocked_account_button">Unlock Account</string>
+    <string name="blocked_account_header">This account has been blocked!</string>
+    <string name="blocked_account_body">For safety reason this account has been blocked. Click on “Unlock Account” button to reactivate your account. This process could take at least 24 hrs before reactivation.</string>
+    <string name="blocked_account_change_account_header">Aren’t you %1$s?</string>
+    <string name="blocked_account_change_account">Change Account</string>
+    <string name="blocked_account_intents">%1$s tries left before this account is blocked</string>
+
+    <!-- Forgotten Password -->
+    <string name="forgotten_password_title">Forgotten Password</string>
+    <string name="forgotten_password_body"><![CDATA[<p>We’ll send you a message to <b><font color=%1$s>%2$s</font></b> in the next 24 hours with a temporary password. After you receive this message you have 24 hours to create a definitive password before this expires.</p>]]></string>
+    <string name="forgotten_password_button">Go to login</string>
 </resources>

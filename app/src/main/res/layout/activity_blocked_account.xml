@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginRight="@dimen/activity_horizontal_margin"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:scaleType="centerInside"
+            android:src="@mipmap/lock"
+            android:layout_marginTop="@dimen/blocked_account_image_margin"
+            android:layout_marginBottom="@dimen/blocked_account_image_margin"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/blocked_account_header"
+            android:gravity="center"
+            android:layout_marginBottom="@dimen/blocked_account_body_margin"
+            android:textColor="@color/blocked_account_header"
+            android:textSize="26sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/blocked_account_body"
+            android:gravity="center" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/blocked_account_button_margin"
+            android:layout_marginBottom="@dimen/blocked_account_button_margin"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <Button
+                android:id="@+id/buttonBlockedAccount"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.7"
+                android:text="@string/blocked_account_button"
+                android:background="@color/blocked_account_button_background"
+                android:textColor="@color/blocked_account_button_text" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/textViewChangeAccountTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginBottom="@dimen/blocked_account_change_account_margin"/>
+
+        <TextView
+            android:id="@+id/textViewChangeAccount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/blocked_account_change_account"
+            android:gravity="center"
+            android:textColor="@color/blocked_account_change_account"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+</android.support.design.widget.CoordinatorLayout>

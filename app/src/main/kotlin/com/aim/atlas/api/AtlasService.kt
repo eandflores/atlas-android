@@ -9,11 +9,11 @@ import retrofit2.http.Path
 interface AtlasService {
     /**
      * @GET declares an HTTP GET request
-     * @Path("userEmail") annotation on the userEmail parameter marks it as a
-     * replacement for the {userEmail} placeholder in the @GET path
-     * @Path("userPassword") annotation on the userEmail parameter marks it as a
-     * replacement for the {userPassword} placeholder in the @GET path
+     * @Path("email") annotation on the userEmail parameter marks it as a
+     * replacement for the {email} placeholder in the @GET path
+     * @Path("password") annotation on the userEmail parameter marks it as a
+     * replacement for the {password} placeholder in the @GET path
      */
-    @GET("/users/{userEmail}/{userPassword}")
-    fun getUser(@Path("user") login: String) : LiveData<ApiResponse<User>>
+    @GET("/users/{email}/{password}")
+    fun getUser(@Path("email") email: String, @Path("password") password: String) : LiveData<ApiResponse<User>>
 }

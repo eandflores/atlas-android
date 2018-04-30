@@ -15,6 +15,6 @@ interface UserDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insert(user: User)
 
-    @Query("SELECT * FROM user WHERE login = :login")
-    fun findByLogin(login: String): LiveData<User>
+    @Query("SELECT * FROM user WHERE email = :email")
+    fun findByLogin(email: String): LiveData<User>
 }

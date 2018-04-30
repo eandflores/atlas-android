@@ -1,13 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#6d6d72</color>
-    <color name="colorPrimaryDark">#8a000000</color>
-    <color name="colorAccent">#234ab8</color>
+    <!-- Theme Gray -->
+    <color name="color_primary">#676b70</color>
+    <color name="color_primary_dark">#8a000000</color>
+    <color name="color_accent">#2962ff</color>
+    <color name="color_toolbar_background">#ffffff</color>
+    <color name="color_toolbar_text">#676b70</color>
+    <color name="color_toolbar_icons">#2962ff</color>
+    <color name="color_snack_bar">#2962ff</color>
+
+    <!-- Splash -->
+    <color name="splash_background_init">#29efff</color>
+    <color name="splash_background_end">#2962ff</color>
 
     <!-- Login -->
-    <color name="colorBackgroundButtonLogin">#0F75BC</color>
-    <color name="colorTextButtonLogin">#FFFFFF</color>
-    <color name="colorHeaderLogin">#2962ff</color>
-    <color name="colorForgotPasswordLogin">#2456e0</color>
+    <color name="login_button_background">#2962ff</color>
+    <color name="login_button_text">#ffffff</color>
+    <color name="login_header">#2962ff</color>
+    <color name="login_forgotten_password">#2456e0</color>
+    <color name="login_edit_texts">#234ab8</color>
+
+    <!-- Blocked Account -->
+    <color name="blocked_account_button_background">#2962ff</color>
+    <color name="blocked_account_button_text">#ffffff</color>
+    <color name="blocked_account_header">#2962ff</color>
+    <color name="blocked_account_change_account">#2456e0</color>
+
+    <!-- Forgotten Password -->
+    <color name="forgotten_password_button_background">#2962ff</color>
+    <color name="forgotten_password_button_text">#ffffff</color>
+    <color name="forgotten_password_email">#2962ff</color>
 
 </resources>

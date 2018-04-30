@@ -3,7 +3,7 @@ package com.aim.atlas.di.component
 import android.app.Application
 import com.aim.atlas.AtlasApplication
 import com.aim.atlas.di.module.AppModule
-import com.aim.atlas.ui.login.LoginActivityModule
+import com.aim.atlas.ui.login.LoginModule
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjectionModule
@@ -11,7 +11,7 @@ import javax.inject.Singleton
 
 
 @Singleton
-@Component(modules = [(AndroidInjectionModule::class), (AppModule::class), (LoginActivityModule::class)])
+@Component(modules = [(AndroidInjectionModule::class), (AppModule::class), (LoginModule::class)])
 interface AppComponent {
     @Component.Builder
     interface Builder {

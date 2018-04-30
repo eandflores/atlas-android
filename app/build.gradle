@@ -30,6 +30,10 @@ kapt {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    //Atlas shared
+    implementation project(':atlas-core')
+
     //Kotlin
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
 
@@ -59,10 +63,6 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     annotationProcessor 'com.google.dagger:dagger-compiler:2.15'
     annotationProcessor 'com.google.dagger:dagger-android-processor:2.15'
-
-    //Butterknife
-    implementation 'com.jakewharton:butterknife:8.8.1'
-    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
 
     // Test helpers for LiveData
     testImplementation "android.arch.core:core-testing:1.1.1"

@@ -9,15 +9,17 @@ import com.aim.atlas.vo.User
 import java.util.concurrent.Executor
 import javax.inject.Inject
 import com.aim.atlas.vo.Resource
+import javax.inject.Singleton
 
 
+@Singleton
 class UserRepository() {
+
     private var webservice: AtlasService? = null
     private var userDao: UserDao? = null
     // simple in memory cache, details omitted for brevity
     //private var userCache: UserCache? = null
     private var executor: Executor? = null
-
 
     @Inject
     constructor(webservice: AtlasService, userDao: UserDao, executor: Executor) : this() {
@@ -26,7 +28,7 @@ class UserRepository() {
         this.executor = executor
     }
 
-    fun loadUser(login: String) : LiveData<Resource<User>>? {
+    fun login(email: String, password : String) : LiveData<Resource<User>>? {
         /*val cached = userCache.get(userEmail, userPassword)
         if (cached != null) {
             return cached
@@ -49,13 +51,12 @@ class UserRepository() {
             }
 
             override fun loadFromDb(): LiveData<User> {
-                return userDao!!.findByLogin(login)
+                return userDao!!.findByLogin(email)
             }
 
             override fun createCall(): LiveData<ApiResponse<User>> {
-                return webservice!!.getUser(login)
+                return webservice!!.getUser(email, password)
             }
         }.getAsLiveData()
     }
-
 }

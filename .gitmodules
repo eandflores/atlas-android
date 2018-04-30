@@ -1,0 +1,3 @@
+[submodule "atlas-shared"]
+	path = atlas-shared
+	url = https://github.com/aimmanager/atlas-shared.git
