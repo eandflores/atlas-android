@@ -9,13 +9,16 @@
     <string name="login_header_expired_session">Hola %1$s, Bienvenido nuevamente!</string>
     <string name="login_change_user">Eres otro usuario?</string>
     <string name="login_forgot_password">Olvidó su contraseña?</string>
+    <string name="login_email_validation">Ingresa un Email válido</string>
 
     <!-- Blocked Account -->
-    <string name="blocked_account_button">Ir al login</string>
+    <string name="blocked_account_title">Cuenta Bloqueada</string>
+    <string name="blocked_account_button">Desbloquear</string>
     <string name="blocked_account_header">Esta cuenta ha sido bloqueada!</string>
     <string name="blocked_account_body">Por razones de seguridad esta cuenta ha sido bloqueda. Haz click en el botón “Desbloquear Cuenta” para reactivar tu cuenta. Este proceso podría tomar al menos 24 hrs antes de la reactivación.</string>
     <string name="blocked_account_change_account_header">No eres %1$s?</string>
-    <string name="blocked_account_change_account">Desbloquear Cuenta</string>
+    <string name="blocked_account_change_account">Cambiar Cuenta</string>
+    <string name="blocked_account_intents">Quedan %1$s intentos antes de que esta cuenta sea bloqueada</string>
 
     <!-- Forgotten Password -->
     <string name="forgotten_password_title">Olvidé mi contraseña</string>

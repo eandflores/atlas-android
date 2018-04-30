@@ -27,6 +27,14 @@
         </activity>
 
         <activity
+            android:name=".ui.splash.SplashActivity"
+            android:parentActivityName=".ui.main.MainActivity"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustPan"
+            android:launchMode="singleTop"/>
+
+        <activity
             android:name=".ui.login.LoginActivity"
             android:screenOrientation="portrait"
             android:configChanges="orientation|keyboardHidden|navigation"
@@ -36,6 +44,15 @@
         <activity
             android:name=".ui.forgottenPassword.ForgottenPasswordActivity"
             android:label="@string/forgotten_password_title"
+            android:parentActivityName=".ui.login.LoginActivity"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustPan"
+            android:launchMode="singleTop"/>
+
+        <activity
+            android:name=".ui.blockedAccount.BlockedAccountActivity"
+            android:label="@string/blocked_account_title"
             android:parentActivityName=".ui.login.LoginActivity"
             android:screenOrientation="portrait"
             android:configChanges="orientation|keyboardHidden|navigation"

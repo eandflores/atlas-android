@@ -1,24 +1,19 @@
 package com.aim.atlas.ui.main
 
 import android.arch.lifecycle.ViewModel
-import android.content.Context
-
-
-
 
 
 class MainViewModel : ViewModel() {
 
-    private var context : Context? = null
+    private var showSplash = true
+    val splashActivity = 1
 
-    fun MainViewModel(context : Context) {
-        this.context = context
+    fun getSplash() : Boolean {
+        return showSplash
     }
 
-    fun init() {
-
+    fun setShowSplash(showSplash: Boolean) {
+        this.showSplash = showSplash
     }
-
-
 
 }

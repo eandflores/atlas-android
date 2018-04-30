@@ -7,6 +7,7 @@
     <color name="color_toolbar_background">#ffffff</color>
     <color name="color_toolbar_text">#676b70</color>
     <color name="color_toolbar_icons">#2962ff</color>
+    <color name="color_snack_bar">#2962ff</color>
 
     <!-- Splash -->
     <color name="splash_background_init">#29efff</color>

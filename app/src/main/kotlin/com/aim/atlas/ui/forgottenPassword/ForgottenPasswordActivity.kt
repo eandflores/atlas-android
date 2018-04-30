@@ -16,8 +16,8 @@ class ForgottenPasswordActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_forgotten_password)
 
+        setListeners()
         setView()
-        setEvents()
     }
 
     private fun setView() {
@@ -31,7 +31,7 @@ class ForgottenPasswordActivity : AppCompatActivity() {
         ))
     }
 
-    private fun setEvents() {
+    private fun setListeners() {
         buttonForgottenPassword.setOnClickListener {
             finish()
         }

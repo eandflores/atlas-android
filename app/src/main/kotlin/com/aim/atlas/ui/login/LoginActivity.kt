@@ -9,10 +9,9 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.view.Gravity
 import com.aim.atlas.R
-import com.aim.atlas.vo.User
 import com.aim.atlas.util.Constants
-import com.aim.atlas.vo.Resource
 import android.widget.LinearLayout
+import com.aim.atlas.ui.blockedAccount.BlockedAccountActivity
 import com.aim.atlas.ui.forgottenPassword.ForgottenPasswordActivity
 import com.aim.atlas.ui.main.MainActivity
 import kotlinx.android.synthetic.main.activity_login.editTextEmail
@@ -20,6 +19,10 @@ import kotlinx.android.synthetic.main.activity_login.editTextPassword
 import kotlinx.android.synthetic.main.activity_login.textViewHeaderLogin
 import kotlinx.android.synthetic.main.activity_login.buttonLogin
 import kotlinx.android.synthetic.main.activity_login.textViewForgottenPassword
+import kotlinx.android.synthetic.main.activity_login.coordinatorLayout
+import kotlinx.android.synthetic.main.activity_login.textInputLayoutEmail
+import kotlinx.android.synthetic.main.activity_login.textInputLayoutPassword
+import android.support.design.widget.Snackbar
 
 
 class LoginActivity : AppCompatActivity() {
@@ -31,6 +34,10 @@ class LoginActivity : AppCompatActivity() {
         setContentView(R.layout.activity_login)
 
         viewModel = ViewModelProviders.of(this).get(LoginViewModel::class.java)
+
+        viewModel.user.observe(this, Observer {
+            //update ui
+        })
 
         setListeners()
         setView()
@@ -79,12 +86,18 @@ class LoginActivity : AppCompatActivity() {
         textViewForgottenPassword.alpha = 0.5f
     }
 
-    private fun showOrHideButtons() {
-        if(viewModel.isEmptyEmail() || !viewModel.isValidEmail()) {
+    private fun submitValidations() {
+        if(viewModel.isEmptyEmail()) {
             disableForgottenPasswordTextView()
             disableLoginButton()
+            hideEmailError()
+        } else if(!viewModel.isValidEmail()) {
+            disableForgottenPasswordTextView()
+            disableLoginButton()
+            showEmailError(resources.getString(R.string.login_email_validation))
         } else {
             enableForgottenPasswordTextView()
+            hideEmailError()
 
             if(viewModel.isEmptyPassword())
                 disableLoginButton()
@@ -93,16 +106,27 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
+    private fun showEmailError(error: String) {
+        textInputLayoutEmail.isErrorEnabled = true
+        textInputLayoutEmail.error = error
+        editTextEmail.requestFocus()
+    }
+
+    private fun hideEmailError() {
+        textInputLayoutEmail.isErrorEnabled = false
+        textInputLayoutEmail.error = null
+    }
+
     private fun setListeners() {
         editTextEmail.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(charSequence: CharSequence, i: Int, i1: Int, i2: Int) {}
 
             override fun onTextChanged(charSequence: CharSequence, i: Int, i1: Int, i2: Int) {
-                viewModel.email.value = charSequence.toString().trim()
+                viewModel.setEmail(charSequence.toString().trim())
             }
 
             override fun afterTextChanged(editable: Editable) {
-                showOrHideButtons()
+                submitValidations()
             }
         })
 
@@ -110,24 +134,32 @@ class LoginActivity : AppCompatActivity() {
             override fun beforeTextChanged(charSequence: CharSequence, i: Int, i1: Int, i2: Int) {}
 
             override fun onTextChanged(charSequence: CharSequence, i: Int, i1: Int, i2: Int) {
-                viewModel.password.value = charSequence.toString().trim()
+                viewModel.setPassword(charSequence.toString().trim())
             }
 
             override fun afterTextChanged(editable: Editable) {
-                showOrHideButtons()
+                submitValidations()
             }
         })
 
         buttonLogin.setOnClickListener {
-            viewModel.getUser()?.observe(this, Observer<Resource<User>> {
-                //Todo: Update UI
-            })
+            if(viewModel.getFailedLoginIntents() < viewModel.maxFailedLoginIntents) {
+                showSnackBarLoginIntents()
+                viewModel.login()
+            } else
+                goToBlockedAccountActivity()
         }
 
         textViewForgottenPassword.setOnClickListener {
-            //Todo: Call forgotten password device
+            //Todo: Call forgotten password service
             goToForgottenPasswordActivity()
         }
+    }
+
+    private fun showSnackBarLoginIntents() {
+        val intents = (viewModel.maxFailedLoginIntents - viewModel.getFailedLoginIntents()).toString()
+        val snackBar = Snackbar.make(coordinatorLayout, getString(R.string.blocked_account_intents, intents), Snackbar.LENGTH_LONG)
+        snackBar.show()
     }
 
     private fun goToMainActivity() {
@@ -136,5 +168,24 @@ class LoginActivity : AppCompatActivity() {
 
     private fun goToForgottenPasswordActivity() {
         startActivity(Intent(this, ForgottenPasswordActivity::class.java))
+    }
+
+    private fun goToBlockedAccountActivity() {
+        startActivityForResult(Intent(this, BlockedAccountActivity::class.java), viewModel.blockedAccountActivity)
+    }
+
+    //Keep first activity
+    override fun onBackPressed() {
+        //super.onBackPressed()
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if(requestCode == viewModel.blockedAccountActivity && resultCode == RESULT_OK) {
+            viewModel.resetFailedLoginIntents()
+            editTextEmail.setText("")
+            editTextPassword.setText("")
+            showGenericWelcome()
+        }
     }
 }

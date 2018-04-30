@@ -17,6 +17,7 @@
         <item name="android:textColorHint">@color/color_primary</item>
         <item name="colorControlNormal">@color/color_primary</item>
         <item name="colorControlActivated">@color/color_accent</item>
+        <item name="textColorError">@color/color_primary </item>
     </style>
 
     <style name="toolbar_dark" parent="Theme.AppCompat">

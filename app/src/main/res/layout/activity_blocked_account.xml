@@ -60,9 +60,9 @@
         </LinearLayout>
 
         <TextView
+            android:id="@+id/textViewChangeAccountTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/blocked_account_change_account_header"
             android:gravity="center"
             android:layout_marginBottom="@dimen/blocked_account_change_account_margin"/>
 
